@@ -1,0 +1,25 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow-y:scroll;
+}
+h2,h3,h4,h6,p{
+    margin: 0;
+}
+.brands-container{
+    background-color: rgb(190, 164, 202);
+    padding: 20px;
+    overflow-y: scroll;
+}
+.heading{
+    padding: 1%;
+    border-bottom:1px solid black ;
+}
+
+ul {
+    list-style-type: none;
+} 
+.product-container{
+    overflow-y: scroll;
+}

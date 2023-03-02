@@ -1,9 +1,13 @@
 import './App.css';
+import { ShoppingContextProvider} from './contexts/ShoppingContext';
+import Shopping from './components/shopping/shopping';
 
 function App() {
   return (
     <div className="App">
-      <p>shopping cart</p>
+      <ShoppingContextProvider>
+        <Shopping />
+      </ShoppingContextProvider>
     </div>
   );
 }
