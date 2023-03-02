@@ -1,0 +1,16 @@
+.form-container{
+    padding: 1% 5%;
+    background-color: #dba483;
+    overflow-y: scroll;
+}
+.form-control{
+    padding: 2% 0%;
+}
+input{
+    padding: 1% 16%;
+}
+.submit-button{
+    padding: 1% 32%;
+    margin: 1% 0% 2% 0%;
+    cursor: pointer;
+}

@@ -37,7 +37,7 @@ function Brands() {
   }
 
   return (
-    <div className="brands-container">
+    <div className="brand-container">
         <h2 className="heading">Products of {selectedBrand}</h2>
         <div>
             {

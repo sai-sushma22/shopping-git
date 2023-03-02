@@ -2,6 +2,7 @@ import React, { useEffect,useContext } from "react";
 import {ShoppingDataContext} from '../../contexts/ShoppingContext';
 import Brands from "../brands/brands";
 import Cart from "../cart/cart";
+import Form from "../form/form";
 import './shopping.css';
 
 function Shopping() {
@@ -71,6 +72,9 @@ function Shopping() {
                     <div className="cart-container">
                         <div className="cart-list">
                             <Cart />
+                        </div>
+                        <div className="form-container">
+                            <Form />
                         </div>
                     </div>  
                 }
