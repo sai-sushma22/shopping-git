@@ -20,6 +20,14 @@ h2,h3,h4,h6,p{
 ul {
     list-style-type: none;
 } 
+
 .product-container{
     overflow-y: scroll;
+}
+
+.cart-container{
+    flex: 4;
+    overflow-y: scroll;
+    background-color: rgb(212, 212, 212);
+    padding: 9px;
 }

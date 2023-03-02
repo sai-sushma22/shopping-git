@@ -1,0 +1,33 @@
+.cart-display{
+    padding: 4% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.cart-image{
+    flex: 1;
+    border-bottom: 1px solid black;
+    padding-bottom: 6%;
+ }
+ .cart-image img{
+     width: 80%;
+ }
+ .cart-details{
+     flex: 4;    
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     border-bottom: 1px solid black;
+ }
+ .d-flex{
+    display: flex;
+}
+.cart-details-alignment{
+    display: flex;
+    padding: 4% 1%;
+}
+.cart-total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

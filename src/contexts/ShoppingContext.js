@@ -5,6 +5,7 @@ const ShoppingDataContext = createContext();
 const ShoppingContextProvider = ({ children }) => {
     const [shoppingData, setShoppingData] = useState([]);
     const [uniqueBrands, setUniqueBrands] = useState([]);
+    const [cartList, setCartList] = useState([]);
     const [selectedBrand, setSelectedBrand] = useState("");
     const [brandList,setBrandList] = useState([]);
 
@@ -17,6 +18,10 @@ const ShoppingContextProvider = ({ children }) => {
       setUniqueBrands(response);
     }, []);
 
+    const updateCart = useCallback((response) => {
+      setCartList([...response]);
+    }, []);
+
     const updateSelectedBrand= useCallback((response,data) => {
       setSelectedBrand(response);
       setBrandList(data)
@@ -27,6 +32,8 @@ const ShoppingContextProvider = ({ children }) => {
       updateShoppingData,
       uniqueBrands,
       updateUniqueBrands,
+      cartList,
+      updateCart,
       selectedBrand,
       updateSelectedBrand,
       brandList
@@ -34,6 +41,8 @@ const ShoppingContextProvider = ({ children }) => {
       updateShoppingData,
       uniqueBrands,
       updateUniqueBrands,
+      cartList,
+      updateCart,
       selectedBrand,
       updateSelectedBrand, 
       brandList]);

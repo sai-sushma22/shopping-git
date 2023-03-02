@@ -3,8 +3,38 @@ import {ShoppingDataContext} from '../../contexts/ShoppingContext';
 import './brands.css'
 
 function Brands() {
-  const {selectedBrand,brandList} = useContext(ShoppingDataContext);
+  const {cartList,selectedBrand,updateCart,brandList,shoppingData,updateShoppingData} = useContext(ShoppingDataContext)
 
+  const updateCartList = (data,operation) =>{
+    let result = cartList,cartData =shoppingData,  i = result.findIndex(item=>item.name == data.name),j = cartData.findIndex(item=>item.name == data.name)
+    if(operation === 'add'){
+      if(i > -1){
+        result[i].quantity += 1 
+        result[i].price += data.price   
+      }else{
+        let product = {
+          'name' : data.name,
+          'quantity' : 1 ,
+          'price' : data.price,
+          'icon':data.icon
+        }
+        result.push(product)
+      }
+      cartData[j].quantity += 1;
+    }else{
+      if(i > -1 && result[i].quantity > 1){
+        result[i].quantity -= 1 
+        result[i].price -= data.price   
+      }else if(i > -1){
+        result.splice(i,1)
+      }
+      if(cartData[j].quantity > 0){
+        cartData[j].quantity -= 1;
+      }
+    }
+    updateCart(result)
+    updateShoppingData(cartData)
+  }
 
   return (
     <div className="brands-container">
@@ -24,6 +54,11 @@ function Brands() {
                                 </div>
                                 <div className="price">
                                     <p>Price: {item.price}</p>
+                                    <div className="d-flex">
+                                      <button onClick={()=>updateCartList(item,'delete')}>-</button>
+                                      <p>{item.quantity}</p>
+                                      <button onClick={()=>updateCartList(item,'add')}>+</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

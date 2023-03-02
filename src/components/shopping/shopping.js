@@ -1,11 +1,12 @@
 import React, { useEffect,useContext } from "react";
 import {ShoppingDataContext} from '../../contexts/ShoppingContext';
 import Brands from "../brands/brands";
+import Cart from "../cart/cart";
 import './shopping.css';
 
 function Shopping() {
 
-    const {shoppingData,selectedBrand,updateShoppingData, uniqueBrands,updateUniqueBrands,updateSelectedBrand} = useContext(ShoppingDataContext)
+    const {shoppingData,updateShoppingData, uniqueBrands,updateUniqueBrands,selectedBrand,updateSelectedBrand,cartList} = useContext(ShoppingDataContext)
 
     useEffect(() => {
             (async ()=>{
@@ -62,10 +63,17 @@ function Shopping() {
                             }
                         )}
                     </div>
-                </div>
+                </div>  
                 <div className="product-container">
                         {selectedBrand != "" && <Brands /> }    
                 </div>
+                { cartList.length > 0 &&
+                    <div className="cart-container">
+                        <div className="cart-list">
+                            <Cart />
+                        </div>
+                    </div>  
+                }
             </div>
     );
 }
